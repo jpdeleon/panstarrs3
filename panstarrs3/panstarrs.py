@@ -20,7 +20,7 @@ PIXEL_SCALE = 0.25*u.arcsec/u.pix
 
 class Panstarrs:
     def __init__(self, ra, dec, fov=30*u.arcsec, filters="grizy", color=False,
-                 format=("jpg","png","fits"), output_fov=None):
+                 format="fits", output_fov=None):
         """
         Attributes
         ----------
@@ -37,7 +37,7 @@ class Panstarrs:
         self.size = int((self.fov/PIXEL_SCALE).value)
         self.color = color
         self.filters= filters
-        self.format = format[0]
+        self.format = format
         self.output_fov = output_fov
         if self.output_fov is not None:
             self.output_size = self.output_fov/PIXEL_SCALE
